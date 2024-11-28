@@ -1,3 +1,6 @@
-
-region      = "us-west-2"
-state_key   = "env/dev/terraform.tfstate"
+aws_region           = "us-west-2"
+lambda_role_name     = "apilambdarole"
+lambda_function_name = "dotnet-api-lambda"
+account_id           = "847837762102"
+api_id               = "mro66o5lqj"
+repository_name      = "dotnet-api"
