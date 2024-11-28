@@ -37,6 +37,11 @@ variable "image_tag" {
 }
 
 variable "api_id" {
-   description = "Gateway API id"
+  description = "Gateway API id"
+  type        = string
+}
+
+variable "repository_name" {
+  description = "ECR repository"
   type        = string
 }

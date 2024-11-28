@@ -7,7 +7,7 @@ module "lambda" {
   source           = "./modules/lambda"
   function_name    = var.lambda_function_name
   lambda_role_name = var.lambda_role_name
-  image_uri        = "${module.ecr.repository_url}:${var.image_tag}"
+  image_uri        = "arn:aws:ecr:${var.aws_region}:${var.account_id}:repository/${var.repository_name}:${var.image_tag}"
   timeout          = var.lambda_timeout
   memory_size      = var.lambda_memory_size
 }
@@ -16,5 +16,5 @@ module "lambda" {
 module "api_gateway" {
   source          = "./modules/api_gateway"
   integration_uri = module.lambda.function_arn
-  api_id = var.api_id
+  api_id          = var.api_id
 }
