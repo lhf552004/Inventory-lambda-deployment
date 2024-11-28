@@ -9,11 +9,6 @@ variable "account_id" {
   type        = string
 }
 
-variable "ecr_name" {
-  description = "Name of the ECR repository"
-  type        = string
-}
-
 variable "lambda_role_name" {
   description = "Name of the IAM role for Lambda"
   type        = string
@@ -36,12 +31,12 @@ variable "lambda_memory_size" {
   default     = 512
 }
 
-variable "api_gateway_name" {
-  description = "Name of the API Gateway"
+variable "image_tag" {
+  description = "Image tag from docker image built"
   type        = string
 }
 
-variable "image_tag" {
-  description = "Image tag from docker image built"
+variable "api_id" {
+   description = "Gateway API id"
   type        = string
 }
