@@ -14,7 +14,10 @@ module "lambda" {
 
 # Call the API Gateway module
 module "api_gateway" {
-  source          = "./modules/api_gateway"
-  integration_uri = module.lambda.function_arn
-  api_id          = var.api_id
+  source               = "./modules/api_gateway"
+  integration_uri      = module.lambda.function_arn
+  api_id               = var.api_id
+  account_id           = var.account_id
+  lambda_function_name = var.lambda_function_name
+  aws_region           = var.aws_region
 }

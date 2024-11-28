@@ -11,3 +11,11 @@ resource "aws_apigatewayv2_route" "default_route" {
   route_key = "$default"
   target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
 }
+
+resource "aws_lambda_permission" "allow_apigw" {
+  statement_id  = "AllowAPIGatewayInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = var.lambda_function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "arn:aws:execute-api:${var.aws_region}:${var.account_id}:${var.api_id}/*"
+}
