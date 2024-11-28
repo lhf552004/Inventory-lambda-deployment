@@ -33,7 +33,7 @@ module "lambda" {
   lambda_role_name = aws_iam_role.lambda_execution_role.name
   lambda_role_id   = aws_iam_role.lambda_execution_role.id
   function_name    = var.lambda_function_name
-  image_uri        = "${module.ecr.repository_url}:latest"
+  image_uri        = "${module.ecr.repository_url}:${var.image_tag}"
   timeout          = var.lambda_timeout
   memory_size      = var.lambda_memory_size
   region           = var.aws_region

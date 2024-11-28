@@ -40,3 +40,8 @@ variable "api_gateway_name" {
   description = "Name of the API Gateway"
   type        = string
 }
+
+variable "image_tag" {
+  description = "Image tag from docker image built"
+  type        = string
+}
