@@ -7,7 +7,7 @@ module "lambda" {
   source           = "./modules/lambda"
   function_name    = var.lambda_function_name
   lambda_role_name = var.lambda_role_name
-  image_uri        = "arn:aws:ecr:${var.aws_region}:${var.account_id}:repository/${var.repository_name}:${var.image_tag}"
+  image_uri        = "${var.account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${var.repository_name}:${var.image_tag}"
   timeout          = var.lambda_timeout
   memory_size      = var.lambda_memory_size
 }
