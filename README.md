@@ -12,6 +12,10 @@ aws s3api create-bucket --bucket inventory-lambda-terraform-state-bucket --regio
 
 ```
 terraform init -backend-config="backend-dev.hcl"
+
+terraform plan -var-file="env/dev.tfvars"
+terraform apply -var-file="env/dev.tfvars"
+
 ```
 
 ## TODO
