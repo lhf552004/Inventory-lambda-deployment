@@ -22,7 +22,7 @@ variable "lambda_function_name" {
 variable "lambda_timeout" {
   description = "Timeout for the Lambda function"
   type        = number
-  default     = 15
+  default     = 300
 }
 
 variable "lambda_memory_size" {
